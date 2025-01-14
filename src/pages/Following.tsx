@@ -3,20 +3,45 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface User {
   Date: string;
   UserName: string;
 }
 
+type SortOption = "date-desc" | "date-asc" | "name-asc" | "name-desc";
+
 const Following = () => {
   const location = useLocation();
   const following = location.state?.following || [];
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<SortOption>("date-desc");
 
   const filteredUsers = following.filter((user: User) =>
     user.UserName.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const sortedUsers = [...filteredUsers].sort((a, b) => {
+    switch (sortBy) {
+      case "date-desc":
+        return new Date(b.Date).getTime() - new Date(a.Date).getTime();
+      case "date-asc":
+        return new Date(a.Date).getTime() - new Date(b.Date).getTime();
+      case "name-asc":
+        return a.UserName.localeCompare(b.UserName);
+      case "name-desc":
+        return b.UserName.localeCompare(a.UserName);
+      default:
+        return 0;
+    }
+  });
 
   return (
     <div className="min-h-screen bg-background p-6 animate-fade-in">
@@ -36,12 +61,25 @@ const Following = () => {
           </header>
         </div>
 
-        <div className="max-w-md">
-          <SearchBar value={searchQuery} onChange={setSearchQuery} />
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <div className="w-full sm:w-64">
+            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+          </div>
+          <Select value={sortBy} onValueChange={(value: SortOption) => setSortBy(value)}>
+            <SelectTrigger className="w-full sm:w-48">
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="date-desc">Newest first</SelectItem>
+              <SelectItem value="date-asc">Oldest first</SelectItem>
+              <SelectItem value="name-asc">Name A-Z</SelectItem>
+              <SelectItem value="name-desc">Name Z-A</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filteredUsers.map((user: User, index: number) => (
+          {sortedUsers.map((user: User, index: number) => (
             <Link
               to={`/profile/${user.UserName}`}
               key={`${user.UserName}-${index}`}
