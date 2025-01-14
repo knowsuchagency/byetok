@@ -4,7 +4,7 @@ import FileUpload from "../components/FileUpload";
 import DataVisualizer from "../components/DataVisualizer";
 import { toast } from "../components/ui/use-toast";
 import { Button } from "../components/ui/button";
-import { Trash2, Github } from "lucide-react";
+import { Trash2, Github, FileText, Globe } from "lucide-react";
 
 interface TikTokData {
   Activity: {
@@ -92,9 +92,15 @@ const Index = () => {
 
       <footer className="mt-16 text-center text-sm text-muted-foreground">
         <div className="space-x-4">
-          <Link to="/terms" className="hover:text-primary hover:underline">Terms of Use</Link>
+          <Link to="/terms" className="inline-flex items-center gap-1 hover:text-primary">
+            <FileText className="h-4 w-4" />
+            <span>Terms of Use</span>
+          </Link>
           <span>·</span>
-          <Link to="/privacy" className="hover:text-primary hover:underline">Privacy Policy</Link>
+          <Link to="/privacy" className="inline-flex items-center gap-1 hover:text-primary">
+            <Globe className="h-4 w-4" />
+            <span>Privacy Policy</span>
+          </Link>
           <span>·</span>
           <a 
             href="https://github.com/knowsuchagency/byetok" 
