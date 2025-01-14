@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
+import { useNavigate } from "react-router-dom";
 
 interface User {
   Date: string;
@@ -11,6 +12,8 @@ interface UserListProps {
 }
 
 const UserList = ({ title, users }: UserListProps) => {
+  const navigate = useNavigate();
+
   return (
     <Card>
       <CardHeader>
@@ -26,7 +29,8 @@ const UserList = ({ title, users }: UserListProps) => {
           {users.map((user, index) => (
             <div
               key={`${user.UserName}-${index}`}
-              className="p-3 rounded-lg bg-accent/50 backdrop-blur-sm"
+              className="p-3 rounded-lg bg-accent/50 backdrop-blur-sm hover:bg-accent/70 cursor-pointer transition-colors"
+              onClick={() => navigate(`/profile/${user.UserName}`)}
             >
               <div className="font-medium">{user.UserName}</div>
               <div className="text-sm text-muted-foreground">
