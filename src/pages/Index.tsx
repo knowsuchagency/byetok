@@ -64,8 +64,7 @@ const Index = () => {
         <header className="text-center space-y-4">
           <h1 className="text-4xl font-semibold tracking-tight">ByeTok</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Upload your TikTok data to visualize and analyze your network of
-            followers and following.
+          Don’t lose your TikTok squad—take them with you wherever you go!
           </p>
         </header>
 
