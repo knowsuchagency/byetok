@@ -24,7 +24,7 @@ const UserList = ({ title, users, type }: UserListProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex justify-between items-center">
+        <CardTitle className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
           <span>{title}</span>
           <div className="flex items-center gap-4">
             <span className="text-sm font-normal text-muted-foreground">
