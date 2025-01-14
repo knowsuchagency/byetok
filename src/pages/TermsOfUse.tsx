@@ -165,10 +165,10 @@ const TermsOfUse = () => {
             </h2>
             <p>
               These Terms are governed by and construed in accordance with the
-              laws of the State of [Your State], without regard to conflict of
+              laws of the State of California, without regard to conflict of
               law principles. Any dispute arising under these Terms shall be
               resolved exclusively in the state or federal courts located in
-              [Your County and State]. You consent to the jurisdiction of such
+              Orange County, California. You consent to the jurisdiction of such
               courts.
             </p>
 
