@@ -58,7 +58,7 @@ const Index = () => {
     <div className="min-h-screen bg-background p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-8">
         <header className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight">TikTok Network Visualizer</h1>
+          <h1 className="text-4xl font-semibold tracking-tight">ByeTok</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Upload your TikTok data to visualize and analyze your network of followers and following.
           </p>
