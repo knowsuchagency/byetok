@@ -37,7 +37,9 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <Button
           variant="outline"
-          onClick={() => navigate("/analytics", { state: { followers, following } })}
+          onClick={() =>
+            navigate("/analytics", { state: { followers, following } })
+          }
           className="gap-2"
         >
           <BarChart className="h-4 w-4" />
@@ -47,10 +49,18 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
-          <UserList title="Followers" users={filteredFollowers} type="followers" />
+          <UserList
+            title="Following"
+            users={filteredFollowing}
+            type="following"
+          />
         </div>
         <div className="space-y-4">
-          <UserList title="Following" users={filteredFollowing} type="following" />
+          <UserList
+            title="Followers"
+            users={filteredFollowers}
+            type="followers"
+          />
         </div>
       </div>
     </div>
