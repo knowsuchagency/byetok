@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
 const Profile = () => {
   const { username } = useParams();
@@ -21,14 +22,22 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background p-6 animate-fade-in">
       <div className="max-w-3xl mx-auto space-y-8">
-        <header className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight">
-            {username}'s Profile
-          </h1>
-          <p className="text-muted-foreground">
-            Links found across different platforms
-          </p>
-        </header>
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon" asChild>
+            <Link to="/">
+              <ArrowLeft className="h-4 w-4" />
+              <span className="sr-only">Back to home</span>
+            </Link>
+          </Button>
+          <header className="space-y-4">
+            <h1 className="text-4xl font-semibold tracking-tight">
+              {username}'s Profile
+            </h1>
+            <p className="text-muted-foreground">
+              Links found across different platforms
+            </p>
+          </header>
+        </div>
 
         <Card>
           <CardHeader>
