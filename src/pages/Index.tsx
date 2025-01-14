@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import FileUpload from "../components/FileUpload";
 import DataVisualizer from "../components/DataVisualizer";
 import { toast } from "../components/ui/use-toast";
-import { Button } from "../components/ui/button";
-import { Trash2, Github, FileText, Globe } from "lucide-react";
+import { FileText, Globe, Github, Trash2 } from "lucide-react";
 
 interface TikTokData {
   Activity: {
@@ -73,20 +72,7 @@ const Index = () => {
             <FileUpload onDataUpload={handleDataUpload} />
           </div>
         ) : (
-          <>
-            <div className="flex justify-end">
-              <Button
-                variant="destructive"
-                size="sm"
-                onClick={handleClearData}
-                className="gap-2"
-              >
-                <Trash2 className="h-4 w-4" />
-                Clear Data
-              </Button>
-            </div>
-            <DataVisualizer data={data} />
-          </>
+          <DataVisualizer data={data} />
         )}
       </div>
 
@@ -111,6 +97,18 @@ const Index = () => {
             <Github className="h-4 w-4" />
             <span>Source</span>
           </a>
+          {data && (
+            <>
+              <span>·</span>
+              <button
+                onClick={handleClearData}
+                className="inline-flex items-center gap-1 text-destructive hover:text-destructive/80"
+              >
+                <Trash2 className="h-4 w-4" />
+                <span>Clear Data</span>
+              </button>
+            </>
+          )}
         </div>
       </footer>
     </div>
