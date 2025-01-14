@@ -25,8 +25,8 @@ RUN npm install -g serve
 # Copy built assets from builder
 COPY --from=builder /app/dist ./dist
 
-# Expose port 8080
-EXPOSE 8080
+# Expose port 8123
+EXPOSE 8123
 
 # Start the application with single-page application support
-CMD ["serve", "-s", "dist", "-l", "8080", "--cors", "--no-clipboard", "--no-request-logging"] 
+CMD ["serve", "-s", "dist", "-l", "8123", "--cors", "--no-clipboard", "--no-request-logging"] 
