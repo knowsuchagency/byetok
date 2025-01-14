@@ -35,26 +35,30 @@ const PrivacyPolicy = () => {
               agree to this Policy. If you do not agree, do not use the Site.
             </p>
 
-            {/* 2. No Data Collection */}
-            <h2 className="font-bold">2. No Data Collection</h2>
+            {/* 2. Limited Data Processing */}
+            <h2 className="font-bold">2. Limited Data Processing</h2>
             <p>
-              We do not collect, store, or transmit any of your TikTok data. All
-              data processing happens locally in your browser. We also do not
-              collect any personal information (such as your name, email, or IP
-              address) for any purpose, including analytics or user tracking.
+              We do not collect or store your TikTok data or personal
+              information. The only server-side processing we perform is to
+              match usernames with potential profiles on other platforms. These
+              username queries are anonymous, not associated with any user, and
+              not stored persistently. We do not collect any personal
+              information (such as your name, email, or IP address) for any
+              purpose, including analytics or user tracking.
             </p>
 
             {/* 3. Local Data Processing */}
             <h2 className="font-bold">3. Local Data Processing</h2>
             <p>
-              All TikTok data or other information you use on the Site is
+              Most TikTok data or other information you use on the Site is
               processed entirely on your device. This means:
             </p>
             <ul>
-              <li>No data is sent to our servers.</li>
+              <li>Your TikTok data is never sent to our servers</li>
+              <li>Username matching queries are anonymous and not stored</li>
               <li>
                 Any analysis or insights you see in the browser come from
-                processing done locally on your computer or mobile device.
+                processing done locally on your computer or mobile device
               </li>
             </ul>
 

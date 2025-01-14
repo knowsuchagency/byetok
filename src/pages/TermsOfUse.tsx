@@ -54,20 +54,21 @@ const TermsOfUse = () => {
             <h2 className="font-bold">3. Purpose of the Site</h2>
             <p>
               ByeTok allows you to export and manage your TikTok follower data
-              locally in your browser so that you can stay connected. It does
-              not store, process, or transmit any of your data to our servers.
-              See our{" "}
+              locally in your browser. While most processing happens locally, we
+              do use our servers to help match usernames with potential profiles
+              on other platforms. This matching process is anonymous and not
+              associated with any user. See our{" "}
               <Link to="/privacy" className="text-primary hover:underline">
                 <strong>Privacy Policy</strong>
               </Link>{" "}
               for details.
             </p>
             <p>
-              <strong>Social Media Profile Matching Disclaimer:</strong> While we
-              attempt to help users find their TikTok connections on other social
-              media platforms, we make no guarantees about the accuracy of these
-              matches. Our search is based on a rudimentary username matching
-              system, which means:
+              <strong>Social Media Profile Matching Disclaimer:</strong> While
+              we attempt to help users find their TikTok connections on other
+              social media platforms, we make no guarantees about the accuracy
+              of these matches. Our search is based on a rudimentary username
+              matching system, which means:
             </p>
             <ul>
               <li>
@@ -87,10 +88,12 @@ const TermsOfUse = () => {
             {/* 4. Data Usage */}
             <h2 className="font-bold">4. Data Usage</h2>
             <p>
-              We only process your TikTok data <strong>locally</strong> in your
-              browser. We do not store or transmit your data to any servers. You
-              acknowledge that you have the necessary rights and permissions to
-              access and analyze any TikTok data you upload.
+              We process your TikTok data primarily <strong>locally</strong> in
+              your browser. The only server-side processing we perform is to
+              match usernames with potential profiles on other platforms. These
+              username queries are not associated with any user or stored
+              persistently. You acknowledge that you have the necessary rights
+              and permissions to access and analyze any TikTok data you upload.
             </p>
 
             {/* 5. Acceptable Use */}
@@ -165,8 +168,8 @@ const TermsOfUse = () => {
             </h2>
             <p>
               These Terms are governed by and construed in accordance with the
-              laws of the State of California, without regard to conflict of
-              law principles. Any dispute arising under these Terms shall be
+              laws of the State of California, without regard to conflict of law
+              principles. Any dispute arising under these Terms shall be
               resolved exclusively in the state or federal courts located in
               Orange County, California. You consent to the jurisdiction of such
               courts.
