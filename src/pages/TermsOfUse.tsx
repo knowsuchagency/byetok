@@ -58,7 +58,7 @@ const TermsOfUse = () => {
               do use our servers to help match usernames with potential profiles
               on other platforms. This matching process is anonymous and not
               associated with any user. See our{" "}
-              <Link to="/privacy" className="text-primary hover:underline">
+              <Link to="/privacy" className="text-primary underline">
                 <strong>Privacy Policy</strong>
               </Link>{" "}
               for details.
