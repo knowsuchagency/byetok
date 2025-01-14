@@ -21,7 +21,7 @@ const Profile = () => {
     queryKey: ["profile", username],
     queryFn: async () => {
       const response = await fetch(
-        `https://social.readux.app/profiles/${username}`
+        `https://api.byetok.com/profiles/${username}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch profile links");
