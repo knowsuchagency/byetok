@@ -31,8 +31,6 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <Timeline followers={followers} following={following} />
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left column - Followers */}
         <div className="space-y-4">
@@ -46,6 +44,8 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
           <Stats followers={followers} following={following} />
         </div>
       </div>
+      
+      <Timeline followers={followers} following={following} />
     </div>
   );
 };
