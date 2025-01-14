@@ -31,16 +31,20 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Stats followers={followers} following={following} />
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
-      </div>
-
       <Timeline followers={followers} following={following} />
-
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <UserList title="Followers" users={filteredFollowers} />
-        <UserList title="Following" users={filteredFollowing} />
+        {/* Left column - Followers */}
+        <div className="space-y-4">
+          <UserList title="Followers" users={filteredFollowers} />
+        </div>
+
+        {/* Right column - Search, Following, Stats */}
+        <div className="space-y-8">
+          <SearchBar value={searchTerm} onChange={setSearchTerm} />
+          <UserList title="Following" users={filteredFollowing} />
+          <Stats followers={followers} following={following} />
+        </div>
       </div>
     </div>
   );
