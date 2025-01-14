@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FileUpload from "../components/FileUpload";
 import DataVisualizer from "../components/DataVisualizer";
 import { toast } from "../components/ui/use-toast";
+import { Button } from "../components/ui/button";
+import { Trash2 } from "lucide-react";
 
 interface TikTokData {
   Activity: {
@@ -14,14 +16,41 @@ interface TikTokData {
   };
 }
 
+const STORAGE_KEY = "tiktok_data";
+
 const Index = () => {
   const [data, setData] = useState<TikTokData | null>(null);
 
+  useEffect(() => {
+    const storedData = localStorage.getItem(STORAGE_KEY);
+    if (storedData) {
+      try {
+        setData(JSON.parse(storedData));
+        toast({
+          title: "Data loaded",
+          description: "Your previously uploaded TikTok data has been restored.",
+        });
+      } catch (error) {
+        console.error("Failed to parse stored data:", error);
+      }
+    }
+  }, []);
+
   const handleDataUpload = (uploadedData: TikTokData) => {
     setData(uploadedData);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(uploadedData));
     toast({
       title: "Data uploaded successfully",
-      description: "Your TikTok data has been processed and is ready for visualization.",
+      description: "Your TikTok data has been processed and saved.",
+    });
+  };
+
+  const handleClearData = () => {
+    setData(null);
+    localStorage.removeItem(STORAGE_KEY);
+    toast({
+      title: "Data cleared",
+      description: "Your TikTok data has been removed.",
     });
   };
 
@@ -38,7 +67,20 @@ const Index = () => {
         {!data ? (
           <FileUpload onDataUpload={handleDataUpload} />
         ) : (
-          <DataVisualizer data={data} />
+          <>
+            <div className="flex justify-end">
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={handleClearData}
+                className="gap-2"
+              >
+                <Trash2 className="h-4 w-4" />
+                Clear Data
+              </Button>
+            </div>
+            <DataVisualizer data={data} />
+          </>
         )}
       </div>
     </div>
