@@ -105,7 +105,7 @@ const FileUpload = ({ onDataUpload }: FileUploadProps) => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center justify-center space-x-2">
         <Checkbox
           id="consent"
           checked={hasConsent}
