@@ -33,21 +33,23 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="flex justify-between items-center">
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="w-full sm:w-96">
+          <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        </div>
         <Button
           variant="outline"
           onClick={() =>
             navigate("/analytics", { state: { followers, following } })
           }
-          className="gap-2"
+          className="gap-2 whitespace-nowrap"
         >
           <BarChart className="h-4 w-4" />
           View Analytics
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-4">
           <UserList
             title="Following"

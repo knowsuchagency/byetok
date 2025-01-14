@@ -59,17 +59,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6 animate-fade-in flex flex-col">
-      <div className="max-w-7xl mx-auto space-y-8 flex-1">
-        <header className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight">ByeTok</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+    <div className="min-h-screen bg-background p-8 lg:p-12 animate-fade-in flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full space-y-12 flex-1">
+        <header className="text-center space-y-6">
+          <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight">ByeTok</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Don't lose your TikTok squad—take them with you wherever you go!
           </p>
         </header>
 
         {!data ? (
-          <FileUpload onDataUpload={handleDataUpload} />
+          <div className="max-w-2xl mx-auto">
+            <FileUpload onDataUpload={handleDataUpload} />
+          </div>
         ) : (
           <>
             <div className="flex justify-end">
@@ -88,7 +90,7 @@ const Index = () => {
         )}
       </div>
 
-      <footer className="mt-12 text-center text-sm text-muted-foreground">
+      <footer className="mt-16 text-center text-sm text-muted-foreground">
         <div className="space-x-4">
           <Link to="/terms" className="hover:text-primary hover:underline">Terms of Use</Link>
           <span>·</span>
