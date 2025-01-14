@@ -8,6 +8,8 @@ import Profile from "./pages/Profile";
 import Analytics from "./pages/Analytics";
 import Followers from "./pages/Followers";
 import Following from "./pages/Following";
+import TermsOfUse from "./pages/TermsOfUse";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/followers" element={<Followers />} />
           <Route path="/following" element={<Following />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import FileUpload from "../components/FileUpload";
 import DataVisualizer from "../components/DataVisualizer";
 import { toast } from "../components/ui/use-toast";
@@ -28,8 +29,7 @@ const Index = () => {
         setData(JSON.parse(storedData));
         toast({
           title: "Data loaded",
-          description:
-            "Your previously uploaded TikTok data has been restored.",
+          description: "Your previously uploaded TikTok data has been restored.",
           duration: 2000,
         });
       } catch (error) {
@@ -59,12 +59,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6 animate-fade-in">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <div className="min-h-screen bg-background p-6 animate-fade-in flex flex-col">
+      <div className="max-w-7xl mx-auto space-y-8 flex-1">
         <header className="text-center space-y-4">
           <h1 className="text-4xl font-semibold tracking-tight">ByeTok</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-          Don’t lose your TikTok squad—take them with you wherever you go!
+            Don't lose your TikTok squad—take them with you wherever you go!
           </p>
         </header>
 
@@ -87,6 +87,14 @@ const Index = () => {
           </>
         )}
       </div>
+
+      <footer className="mt-12 text-center text-sm text-muted-foreground">
+        <div className="space-x-4">
+          <Link to="/terms" className="hover:text-primary hover:underline">Terms of Use</Link>
+          <span>·</span>
+          <Link to="/privacy" className="hover:text-primary hover:underline">Privacy Policy</Link>
+        </div>
+      </footer>
     </div>
   );
 };
