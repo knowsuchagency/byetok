@@ -30,8 +30,8 @@ const TermsOfUse = () => {
             {/* 1. Acceptance of Terms */}
             <h2 className="font-bold">1. Acceptance of Terms</h2>
             <p>
-              By accessing and using ByeTok (“the Site”), you agree to be bound
-              by these Terms of Use (“Terms”). If you do not agree, you may not
+              By accessing and using ByeTok ("the Site"), you agree to be bound
+              by these Terms of Use ("Terms"). If you do not agree, you may not
               use the Site.
             </p>
 
@@ -62,6 +62,27 @@ const TermsOfUse = () => {
               </Link>{" "}
               for details.
             </p>
+            <p>
+              <strong>Social Media Profile Matching Disclaimer:</strong> While we
+              attempt to help users find their TikTok connections on other social
+              media platforms, we make no guarantees about the accuracy of these
+              matches. Our search is based on a rudimentary username matching
+              system, which means:
+            </p>
+            <ul>
+              <li>
+                We cannot guarantee that we will find all or any of your
+                connections on other platforms
+              </li>
+              <li>
+                Any matches we do find may belong to different individuals who
+                happen to use the same username
+              </li>
+              <li>
+                Users should carefully verify any suggested matches before
+                attempting to connect with them on other platforms
+              </li>
+            </ul>
 
             {/* 4. Data Usage */}
             <h2 className="font-bold">4. Data Usage</h2>
