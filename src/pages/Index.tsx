@@ -28,7 +28,9 @@ const Index = () => {
         setData(JSON.parse(storedData));
         toast({
           title: "Data loaded",
-          description: "Your previously uploaded TikTok data has been restored.",
+          description:
+            "Your previously uploaded TikTok data has been restored.",
+          duration: 2000,
         });
       } catch (error) {
         console.error("Failed to parse stored data:", error);
@@ -42,6 +44,7 @@ const Index = () => {
     toast({
       title: "Data uploaded successfully",
       description: "Your TikTok data has been processed and saved.",
+      duration: 2000,
     });
   };
 
@@ -51,6 +54,7 @@ const Index = () => {
     toast({
       title: "Data cleared",
       description: "Your TikTok data has been removed.",
+      duration: 2000,
     });
   };
 
@@ -60,7 +64,8 @@ const Index = () => {
         <header className="text-center space-y-4">
           <h1 className="text-4xl font-semibold tracking-tight">ByeTok</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Upload your TikTok data to visualize and analyze your network of followers and following.
+            Upload your TikTok data to visualize and analyze your network of
+            followers and following.
           </p>
         </header>
 
