@@ -47,10 +47,10 @@ const DataVisualizer = ({ data }: DataVisualizerProps) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
-          <UserList title="Followers" users={filteredFollowers} />
+          <UserList title="Followers" users={filteredFollowers} type="followers" />
         </div>
         <div className="space-y-4">
-          <UserList title="Following" users={filteredFollowing} />
+          <UserList title="Following" users={filteredFollowing} type="following" />
         </div>
       </div>
     </div>
