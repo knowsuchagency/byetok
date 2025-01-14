@@ -48,6 +48,36 @@ const Profile = () => {
           </header>
         </div>
 
+        <Card className="bg-muted/50">
+          <CardContent className="pt-6">
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold">
+                Social Media Profile Matching Disclaimer:
+              </h2>
+              <p>
+                While we attempt to help users find their TikTok connections on
+                other social media platforms, we make no guarantees about the
+                accuracy of these matches. Our search is based on a rudimentary
+                username matching system, which means:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  We cannot guarantee that we will find all or any of your
+                  connections on other platforms
+                </li>
+                <li>
+                  Any matches we do find may belong to different individuals who
+                  happen to use the same username
+                </li>
+                <li>
+                  Users should carefully verify any suggested matches before
+                  attempting to connect with them on other platforms
+                </li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>Social Links</CardTitle>
