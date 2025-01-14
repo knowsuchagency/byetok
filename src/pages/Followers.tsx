@@ -1,6 +1,8 @@
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import SearchBar from "@/components/SearchBar";
 
 interface User {
   Date: string;
@@ -10,6 +12,11 @@ interface User {
 const Followers = () => {
   const location = useLocation();
   const followers = location.state?.followers || [];
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredUsers = followers.filter((user: User) =>
+    user.UserName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-background p-6 animate-fade-in">
@@ -29,8 +36,12 @@ const Followers = () => {
           </header>
         </div>
 
+        <div className="max-w-md">
+          <SearchBar value={searchQuery} onChange={setSearchQuery} />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {followers.map((user: User, index: number) => (
+          {filteredUsers.map((user: User, index: number) => (
             <Link
               to={`/profile/${user.UserName}`}
               key={`${user.UserName}-${index}`}
